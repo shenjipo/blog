@@ -1,6 +1,6 @@
-## 源码地址
+[源码地址](https://github.com/shenjipo/blog)
 
-https://github.com/shenjipo/blog
+[博客地址](http://101.133.143.249/Blog/#/MainPage/BlogUpdate/5f35a915-01f0-4fe3-989f-6f6bcf4712b0)
 
 ## 背景
 
@@ -75,7 +75,6 @@ import type { Blog } from 'wang-blog-client/src/model/Blog'
 
 **解决方案是在制作node镜像时，需要提前手动删除pakage.json文件夹中的`"wang-blog-client": "workspace:^"`**
 
-
 ## docker镜像的制作与使用
 
 在本项目使用`docker`与`docker-compose`工具部署时会遇到以下两个问题
@@ -104,7 +103,6 @@ const mysqlInstance = mysql.createConnection({
         database: process.env.DB_NAME
     })
 ```
-
 
 ![image_d2c9a29f4d56eca44e8a5f61978777de.png](http://101.133.143.249/api/getImage/image_d2c9a29f4d56eca44e8a5f61978777de.png)
 
