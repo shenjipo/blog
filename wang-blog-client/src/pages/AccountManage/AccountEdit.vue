@@ -30,8 +30,8 @@ import { Account } from '@/model/Account'
 import { FormRules } from '@/utils/ComponentUtils'
 import { AccountManageApi } from '@/api/AccountManageApi'
 import { useRouter, useRoute } from 'vue-router'
-import { ElForm } from 'element-plus'
-import { ElMessage, ElDialog } from 'element-plus'
+import { ElForm } from 'el-cool'
+import { ElMessage, ElDialog } from 'el-cool'
 
 
 const router = useRouter()

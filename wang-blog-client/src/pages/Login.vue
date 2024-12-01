@@ -23,10 +23,10 @@
 import { reactive, ref } from 'vue';
 import { FormRules } from '@/utils/ComponentUtils'
 import { Api } from '@/api/login';
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'el-cool';
 import { useRouter, useRoute } from 'vue-router'
 import { useStore } from '@/store';
-import { ElForm } from 'element-plus';
+import { ElForm } from 'el-cool';
 
 
 const router = useRouter()

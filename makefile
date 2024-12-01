@@ -4,7 +4,7 @@ Which service do you want to start run?
   2) _front-server
   3) _backend-server
   4) _build-server
-  5) _build-client-docker
+  5) _build-client
   6) _build-server-image
   7) _build-nginx-image
   8) docker compose
@@ -21,7 +21,7 @@ run:
  	if [ "$$SERVICE" = "2" ]; then make _front-server; fi ;\
  	if [ "$$SERVICE" = "3" ]; then make _backend-server; fi ;\
 	if [ "$$SERVICE" = "4" ]; then make _build-server; fi ;\
-	if [ "$$SERVICE" = "5" ]; then make _build-client-docker; fi ;\
+	if [ "$$SERVICE" = "5" ]; then make _build-client; fi ;\
 	if [ "$$SERVICE" = "6" ]; then make _build-server-image; fi ;\
 	if [ "$$SERVICE" = "7" ]; then make _build-nginx-image; fi ;\
 	if [ "$$SERVICE" = "8" ]; then make _docker-compose; fi ;\
@@ -43,8 +43,8 @@ _backend-server:
 _build-server:
 	pnpm build-server
 
-.PHONY: _build-client-docker
-_build-client-docker:
+.PHONY: _build-client
+_build-client:
 	pnpm build-client-docker
 
 .PHONY: _build-server-image

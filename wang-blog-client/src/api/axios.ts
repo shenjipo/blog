@@ -1,7 +1,7 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosResponse } from 'axios'
 import type { AxiosError, InternalAxiosRequestConfig, AxiosRequestConfig } from 'axios'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'el-cool'
 import { router } from '@/router'
 
 const service: AxiosInstance = axios.create({

@@ -9,8 +9,8 @@
 
             </div>
             <div class="head-right">
-                <el-button type="secondary" @click="handleExportMd">导出为md</el-button>
-                <el-button type="secondary" @click="handleExportImage">导出为图片</el-button>
+                <el-button @click="handleExportMd">导出为md</el-button>
+                <el-button @click="handleExportImage">导出为图片</el-button>
             </div>
 
 
@@ -29,7 +29,7 @@ import { ArticleManageApi } from '@/api/ArticleManageApi'
 import { Blog } from '@/model/Blog';
 import { onMounted, ref, watch } from 'vue';
 import { Utils } from '@/utils/Utils'
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'el-cool';
 import { useRoute } from 'vue-router'
 import Vditor from 'vditor'
 import { RenderMode } from '@/model/Vditor';

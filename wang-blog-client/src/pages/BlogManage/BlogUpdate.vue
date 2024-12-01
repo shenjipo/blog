@@ -36,7 +36,7 @@
 import { ArticleManageApi } from '../../api/ArticleManageApi'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Blog } from '@/model/Blog'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'el-cool'
 import { useRoute, useRouter } from "vue-router"
 import { Utils } from '../../utils/Utils'
 import Vditor from 'vditor'

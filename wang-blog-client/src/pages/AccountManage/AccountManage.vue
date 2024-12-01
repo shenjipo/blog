@@ -51,7 +51,7 @@ import { Utils } from '../../utils/Utils'
 import { Account } from '@/model/Account.ts'
 import { AccountManageApi } from '@/api/AccountManageApi'
 import { Page } from '@/model/Common.ts'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'el-cool'
 import { useStore } from '@/store/index'
 
 const store = useStore()

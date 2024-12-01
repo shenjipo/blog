@@ -10,6 +10,10 @@ export default class CommonUtils {
         return JSON.parse(JSON.stringify(val))
     }
 
+    static  IsMobile() {
+        return ('ontouchstart' in document.documentElement)
+    }
+
     static TsDialog(component: any, config: Record<string, any>) {
         const div = document.createElement('div');
         document.body.appendChild(div);

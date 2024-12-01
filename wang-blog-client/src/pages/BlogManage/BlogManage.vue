@@ -62,7 +62,7 @@ import { reactive, ref, onMounted } from 'vue'
 import { ArticleManageApi } from '../../api/ArticleManageApi'
 import { useRouter } from 'vue-router'
 import { Blog } from '@/model/Blog'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'el-cool'
 import { Utils } from '../../utils/Utils'
 import { Page } from '@/model/Common'
 import { useStore } from '@/store/index'
@@ -107,7 +107,7 @@ const handleEditBlog = (params: Blog) => {
 }
 // 预览博客
 const handlePreviewBlog = (blog: Blog) => {
-    window.open(`http://${location.host}/Blog/#/Preview/PreviewBlog/${blog.id}`)
+    window.open(`http://${location.host}/Blog/#/PreviewPc/PreviewBlog/${blog.id}`)
 }
 // 删除博客
 const handleDeleteBlog = (params: Blog) => {

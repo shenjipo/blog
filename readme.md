@@ -1,6 +1,6 @@
 [源码地址](https://github.com/shenjipo/blog)
 
-[博客地址](http://101.133.143.249/Blog/#/MainPage/BlogUpdate/5f35a915-01f0-4fe3-989f-6f6bcf4712b0)
+[博客地址](http://101.133.143.249/Blog/#/Preview/PreviewBlog/5f35a915-01f0-4fe3-989f-6f6bcf4712b0)
 
 ## 背景
 
