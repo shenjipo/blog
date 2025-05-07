@@ -20,25 +20,17 @@ export class Utils {
     static exportImage(targetDom: any, title: string) {
 
         let copyDom = targetDom.cloneNode(true);
-        copyDom.style.width = targetDom.scrollWidth + "px";
-        copyDom.style.height = targetDom.scrollHeight + "px";
-        let bodyDom: any = document.querySelector("body")
+        let bodyDom = document.querySelector("body")
         bodyDom.appendChild(copyDom);
 
         html2canvas(copyDom, {
             useCORS: true,
             allowTaint: true,
-            // onclone: (canvas) => {
-            //     return new Promise((resolve: any, reject: any) => {
-            //         setTimeout(() => {
-            //             resolve()
-            //         }, 2000)
-            //     })
-            // }
-        }).then((canvas: any) => {
+
+        }).then(canvas => {
             let imgUrl = canvas.toDataURL("image/png");
             let a = document.createElement("a");
-            a.download = `${title}_md.png`;// 设置下载的文件名，默认是'下载'
+            a.download = `${title}.png`;// 设置下载的文件名，默认是'下载'
             a.href = imgUrl;
 
             a.click();
@@ -63,5 +55,27 @@ export class Utils {
         a.download = `${title}.md`;
         a.click();
         a.remove()
+    }
+
+    static copyStringToClipboard(content: string): Promise<string> {
+        // 创建一个临时的textarea元素
+        const textarea = document.createElement('textarea');
+        textarea.value = content;
+        // 将textarea设置为不可见，并添加到文档中
+        textarea.style.position = 'fixed';  // 防止页面滚动
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        // 选中文本
+        textarea.select();
+
+        return new Promise((resolve, reject) => {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                resolve(content)
+            } else {
+                reject(`复制 ${content} 失败!`)
+            }
+            document.body.removeChild(textarea);
+        })
     }
 }

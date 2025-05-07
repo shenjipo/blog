@@ -18,7 +18,16 @@ interface Blog {
 }
 
 onMounted(() => {
-    getList()
+    const blogId = route.query.blogId
+    if (blogId) {
+        if (CommonUtils.IsMobile()) {
+            router.push(`/PreviewMobile/PreviewBlog/${blogId}`)
+        } else {
+            router.push(`/PreviewPc/PreviewBlog/${blogId}`)
+        }
+    } else {
+        getList()
+    }
 })
 
 const blogList = ref<Array<Blog>>()
@@ -31,7 +40,7 @@ const getList = () => {
             }
             return parseInt(b.createTime) - parseInt(a.createTime)
         })
-      
+
         if (CommonUtils.IsMobile()) {
             router.push(`/PreviewMobile/PreviewBlog/${blogList.value[0].id}`)
         } else {

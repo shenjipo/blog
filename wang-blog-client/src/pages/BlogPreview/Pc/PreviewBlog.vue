@@ -9,11 +9,15 @@
 
             </div>
             <div class="head-right">
+                <el-tooltip content="复制链接">
+                    <el-icon style="margin-right: 16px;" @click="handleCopyUrl">
+                        <Link />
+                    </el-icon>
+                </el-tooltip>
+
                 <el-button @click="handleExportMd">导出为md</el-button>
                 <el-button @click="handleExportImage">导出为图片</el-button>
             </div>
-
-
 
         </div>
 
@@ -34,7 +38,7 @@ import { useRoute } from 'vue-router'
 import Vditor from 'vditor'
 import { RenderMode } from '@/model/Vditor';
 
-const isShowNav = ref<boolean>(true)
+
 const route = useRoute()
 const blog = ref<Blog>({
     content: '',
@@ -101,16 +105,24 @@ watch(() => route.params.id, (nVal, oVal) => {
     getBlogDetail()
 })
 
-const handleNavToggle = (isShow: boolean, value: string) => {
-    isShowNav.value = isShow
+const handleCopyUrl = () => {
+    const url = location.origin + location.pathname + '#/Preview?' + `blogId=${route.params.id}`
+    Utils.copyStringToClipboard(url).then(res => {
+        ElMessage.success('复制链接成功!')
+    }).catch(err => {
+        ElMessage.error(err)
+    })
 }
+
 const handleExportImage = () => {
-    const targetDom: any = document.getElementsByClassName('v-show-content')[0]
+    const targetDom: any = document.querySelector('.vditor-ir .vditor-reset')
     Utils.exportImage(targetDom, blog.value.title)
 }
+
 const handleExportMd = () => {
     Utils.exportMd(blog.value.content, blog.value.title)
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -137,12 +149,14 @@ const handleExportMd = () => {
 
         .head-right {
             display: flex;
+            align-items: center;
             justify-content: flex-end;
             padding: 0 16px 0 0;
+
+            .el-icon {
+                cursor: pointer;
+            }
         }
-
-
-
     }
 
     #vditor {
