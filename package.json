@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "pnpm -F wang-blog-client dev",
-        "build-client-docker": "pnpm -F wang-blog-client build:docker",
+        "build-client": "pnpm -F wang-blog-client build:docker",
         "start-server": "pnpm -F wang-blog-server dev",
         "build-server": "pnpm -F wang-blog-server build"
     },
