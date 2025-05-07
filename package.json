@@ -1,16 +1,15 @@
 {
-  "name": "my_blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "pnpm -F wang-blog-client dev",
-    "prod":"pnpm -F wang-blog-server build",
-    "start-server":"pnpm -F wang-blog-server dev",
-    "build-server":"pnpm -F wang-blog-server build",
-    "build-client-docker":"pnpm -F wang-blog-client build:docker"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "my_blog",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "pnpm -F wang-blog-client dev",
+        "build-client-docker": "pnpm -F wang-blog-client build:docker",
+        "start-server": "pnpm -F wang-blog-server dev",
+        "build-server": "pnpm -F wang-blog-server build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
