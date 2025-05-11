@@ -97,7 +97,7 @@ const handleSelect = (value: string | number | Record<string, any> | undefined) 
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/var.scss";
+@use "../styles/var";
 
 .main-page {
     width: 100%;
@@ -111,7 +111,7 @@ const handleSelect = (value: string | number | Record<string, any> | undefined) 
         height: 100vh;
         flex-shrink: 0;
         flex-grow: 0;
-        background-color: $--gray-2;
+        background-color: var.$gray-2;
 
         .menu-title {
             display: flex;
@@ -131,13 +131,13 @@ const handleSelect = (value: string | number | Record<string, any> | undefined) 
                 padding: 12px 0 12px 0;
 
                 .item-text {
-                    color: $--gray-10;
+                    color: var.$gray-10;
                     margin-left: 8px;
                 }
             }
 
             .selected-menu {
-                background-color: $--gray-4;
+                background-color: var.$gray-4;
             }
 
         }
@@ -154,7 +154,7 @@ const handleSelect = (value: string | number | Record<string, any> | undefined) 
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 8px $--gray-3;
+            box-shadow: 0 4px 8px var.$gray-3;
             /* 阴影 */
             border-radius: 4px;
 

@@ -82,10 +82,10 @@ const handleChange = (blogId: string) => {
 </style>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
+@use "@/styles/var";
 
 .mobile {
-    background-color: $--blue-2;
+    background-color: var.$blue-2;
 
     .blog-select {
         width: 80%;

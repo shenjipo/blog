@@ -1,4 +1,4 @@
-@import "./var.scss";
+@use "./var";
 
 html {
     margin: 0;
@@ -42,5 +42,5 @@ body {
 }
 
 .el-button--secondary {
-    background-color: $--gray-1 !important;
+    background-color: var.$gray-1 !important;
 }

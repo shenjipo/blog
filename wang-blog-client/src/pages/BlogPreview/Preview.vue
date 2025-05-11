@@ -55,7 +55,6 @@ const getList = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
 
 .preview {
     display: flex;

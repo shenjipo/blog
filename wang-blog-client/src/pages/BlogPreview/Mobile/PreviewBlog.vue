@@ -104,7 +104,7 @@ watch(() => route.params.id, (nVal, oVal) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
+@use "@/styles/var";
 
 .preview-blog {
     margin-top: 16px;
@@ -124,7 +124,7 @@ watch(() => route.params.id, (nVal, oVal) => {
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
-            color: $--gray-6;
+            color: var.$gray-6;
         }
 
     }
@@ -146,7 +146,7 @@ watch(() => route.params.id, (nVal, oVal) => {
 
 
         :deep(.vditor-reset) {
-            background-color: $--gray-1 !important;
+            background-color: var.$gray-1 !important;
             padding: 0 50px !important;
         }
     }

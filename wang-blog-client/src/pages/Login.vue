@@ -69,7 +69,7 @@ const handleSubmit = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/var.scss";
+@use "../styles/var";
 
 .login-box {
     background-image: url("/Blog/assets/mountain.jpg");
@@ -79,7 +79,7 @@ const handleSubmit = () => {
     justify-content: center;
 
     .el-card {
-        background-color: $--blue-1;
+        background-color: var.$blue-1;
         width: 500px;
         margin-top: 30vh;
         height: 220px;

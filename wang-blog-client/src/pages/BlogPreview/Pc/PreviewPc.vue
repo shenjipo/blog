@@ -94,7 +94,7 @@ const handleBlogDetail = (blog: { id: string, title: string, createTime: string 
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
+@use "@/styles/var";
 
 .box {
     width: 100%;
@@ -111,7 +111,7 @@ const handleBlogDetail = (blog: { id: string, title: string, createTime: string 
         width: 250px;
         position: relative;
         padding: 20px 0 20px 0;
-        background-color: $--gray-2;
+        background-color: var.$gray-2;
 
         .el-input {
             margin: 0 8px;
@@ -143,7 +143,7 @@ const handleBlogDetail = (blog: { id: string, title: string, createTime: string 
             }
 
             .blog-selected {
-                background-color: $--gray-4;
+                background-color: var.$gray-4;
 
             }
         }

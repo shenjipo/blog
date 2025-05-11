@@ -126,8 +126,6 @@ const handleExportMd = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
-
 .preview-blog {
 
     margin-top: 8px;
