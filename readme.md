@@ -19,7 +19,7 @@
 
 部署：`docker` `docker-compose`
 
-![image_eb18c628db362f1532334905b00ede46.png](http://101.133.143.249/api/getImage/image_eb18c628db362f1532334905b00ede46.png)
+![image_eb18c628db362f1532334905b00ede46.png](http://101.133.143.249/blog-api/getImage/image_eb18c628db362f1532334905b00ede46.png)
 
 博客的架构如图所示，最终产物是三个镜像，后端node服务镜像、前端nginx镜像与mysql镜像。基于docker-compose与这三个镜像编排生成容器实例，并且组成一个`app-network`的容器网络，这个容器网络有以下一些特点和功能
 
@@ -33,7 +33,7 @@
 
 在[elemen-plus源码解读](http://101.133.143.249/Blog/#/Preview/PreviewBlog/748549b5-dcce-4b09-a855-f4c1b5cbd74c)介绍了基于pnpm的monorepo仓库，尤其是当前后端使用了相同的开发语言时，使用monorepo仓库能够复用部分依赖与模型，下面介绍下本博客的文件目录结构
 
-![image_cb15fb81966fce7ff4ef1230cd0bb830.png](http://101.133.143.249/api/getImage/image_cb15fb81966fce7ff4ef1230cd0bb830.png)
+![image_cb15fb81966fce7ff4ef1230cd0bb830.png](http://101.133.143.249/blog-api/getImage/image_cb15fb81966fce7ff4ef1230cd0bb830.png)
 
 目录中主要包含以下几个重要的文件夹
 
@@ -47,7 +47,7 @@
 
 1. 在后端项目中执行 `pnpm add wang-blog-client`添加前端工程（名字取前端pakcage.json部分定义的name）作为自己的依赖，结果如下图所示
 
-![image_31d0782ae98fd92191fef827639a912b.png](http://101.133.143.249/api/getImage/image_31d0782ae98fd92191fef827639a912b.png)
+![image_31d0782ae98fd92191fef827639a912b.png](http://101.133.143.249/blog-api/getImage/image_31d0782ae98fd92191fef827639a912b.png)
 
 2. 在前端项目中导出某个ts定义的model，例如在`wang-blog-client\src\model\Blog.ts`文件夹下定义的
 
@@ -104,7 +104,7 @@ const mysqlInstance = mysql.createConnection({
     })
 ```
 
-![image_d2c9a29f4d56eca44e8a5f61978777de.png](http://101.133.143.249/api/getImage/image_d2c9a29f4d56eca44e8a5f61978777de.png)
+![image_d2c9a29f4d56eca44e8a5f61978777de.png](http://101.133.143.249/blog-api/getImage/image_d2c9a29f4d56eca44e8a5f61978777de.png)
 
 前端请求后端数据，使用ng转发到后端容器，注意域名填`backend`，对应docker-compose中后端的名称
 
@@ -121,7 +121,7 @@ location /api/ {
 }
 ```
 
-![image_a5055992348e316f6757323ac9116c2c.png](http://101.133.143.249/api/getImage/image_a5055992348e316f6757323ac9116c2c.png)
+![image_a5055992348e316f6757323ac9116c2c.png](http://101.133.143.249/blog-api/getImage/image_a5055992348e316f6757323ac9116c2c.png)
 
 至此，解决了容器部署带来的两个问题，下面时制作镜像与tar包的一些命令
 
@@ -160,3 +160,13 @@ location /api/ {
 ## 基于makefile脚本简化打包部署流程
 
 参考源码makefile文件夹
+
+## 部分docker常用命令
+
+> docker images 查看所有镜像
+>
+> docker system prune 清除所有未使用的镜像
+>
+> docker rmi xxx 删除某个镜像
+>
+> docker-compose up 根据执行命令所在目录的docker-compose.yaml配置文件启动容器
